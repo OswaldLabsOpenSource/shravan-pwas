@@ -4,7 +4,6 @@ npm-debug.log
 
 *.js.map
 *.metadata.json
-app/**/*.js
 e2e/**/*.js
 e2e/reports/
 hooks/
