@@ -1,3 +1,4 @@
+const AdvancedWebView = require("nativescript-advanced-webview");
 module.exports = {
   data() {
     return {
@@ -6,12 +7,10 @@ module.exports = {
     };
   },
   mounted() {
+    AdvancedWebView.init();
     fetch("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com%2Fnews%2Frss%3Fned%3Dus%26gl%3DUS%26hl%3Den").then(response => response.json()).then(news => {
       this.news = news.items;
     }).catch(e => {});
-  },
-  methods: {
-    openClick() {}
   },
   template: `
     <StackLayout>
@@ -35,5 +34,13 @@ module.exports = {
     decrement() {
       this.count -= 1;
     },
+    openClick(event) {
+      var opts = {
+        url: event.item.link,
+        toolbarColor: '#FC3C53',
+        toolbarControlsColor: '#FFFFFF'
+      };
+      AdvancedWebView.openAdvancedUrl(opts);
+    }
   },
 };
