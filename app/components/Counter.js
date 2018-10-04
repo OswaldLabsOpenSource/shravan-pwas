@@ -2,14 +2,16 @@ module.exports = {
   data() {
     return {
       count: 42,
+      news: []
     };
   },
-  computed: {
-    message() {
-      return this.count > 0
-        ? `Tap tap tap! Only ${this.count} left!`
-        : `Whoa! Slow down, we have hit the limit...`;
-    },
+  mounted() {
+    fetch("https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fnews.google.com%2Fnews%2Frss%3Fned%3Dus%26gl%3DUS%26hl%3Den").then(response => response.json()).then(news => {
+      this.news = news.items;
+    }).catch(e => {});
+  },
+  methods: {
+    openClick() {}
   },
   template: `
     <StackLayout>
@@ -19,7 +21,11 @@ module.exports = {
         <Button @tap="increment" text="+" class="btn btn-outline"/>
       </FlexboxLayout>
       
-      <Label class="p-20" :text="message"/>
+      <ListView for="item in news" @itemTap="openClick">
+        <v-template>
+          <Label :text="item.title" />
+        </v-template>
+      </ListView>
     </StackLayout>
   `,
   methods: {

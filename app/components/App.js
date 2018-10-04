@@ -37,6 +37,7 @@ module.exports = {
         <Button class="btn btn-primary" @tap="location" text="Where am I?" />
         
         <Label class="p-20" textWrap=true :text="loading ? 'Loading...' : answer" />
+        <Counter />
       </StackLayout>
     </Page>
   `,
