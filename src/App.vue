@@ -52,4 +52,11 @@ header {
   top: 10vh; bottom: 0;
   overflow: auto;
 }
+p {
+  margin: 0;
+  line-height: 1.5;
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
 </style>

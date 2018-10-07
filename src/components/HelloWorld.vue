@@ -69,7 +69,6 @@ export default {
     updateWeather() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
-          // console.log(position.coords.latitude, position.coords.longitude);
           fetch(`https://platform.oswaldlabs.com/v1/weather/52.2090558/6.8687985`).then(response => response.json()).then(json => {
             this.weather = json.weather[0].main;
           }).catch(e => {});
