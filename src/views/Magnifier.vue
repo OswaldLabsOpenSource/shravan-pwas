@@ -26,7 +26,7 @@ export default {
 			navigator.mediaDevices.enumerateDevices()
 				.then(devices => {
 					const list = [];
-					devices.forEach(device => device.kind === "videoinput" && list.push(device.deviceId));
+					devices.forEach(device => device.kind === "videoinput" && list.push(device.groupId));
 					this.devices = list;
 					this.camera = list.length > 0 ? list[0] : "";
 				})
@@ -40,19 +40,11 @@ export default {
 					.then(stream => {
 						const track = stream.getVideoTracks()[0];
 						track.applyConstraints({
-							facingMode: { exact: "environment" }
+							groupId: this.camera
 						}).then(() => {
 							this.$refs.video.srcObject = stream;
 						}).catch(e => {
-							if (e.name === "OverconstrainedError") {
-								const track = stream.getVideoTracks()[0];
-								track.applyConstraints({
-									facingMode: undefined
-								});
-								this.$refs.video.srcObject = stream;
-							} else {
-								console.log(e);
-							}
+							console.log(e);
 						});
 					})
 					.catch(e => console.log(e));
