@@ -28,7 +28,7 @@ export default {
 					const list = [];
 					devices.forEach(device => device.kind === "videoinput" && list.push(device.deviceId));
 					this.devices = list;
-					this.camera = list.length > 0 ? list[0] : "";
+					this.camera = list[list.length - 1];
 				})
 				.catch(e => console.log(e));
 		}
