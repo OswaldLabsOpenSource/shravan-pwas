@@ -17,6 +17,11 @@ export default new Router({
       path: '/location',
       name: 'Location',
       component: () => import(/* webpackChunkName: "location" */ './views/Location.vue')
+    },
+    {
+      path: '/magnifier',
+      name: 'Magnifier',
+      component: () => import(/* webpackChunkName: "Magnifier" */ './views/Magnifier.vue')
     }
   ]
 })

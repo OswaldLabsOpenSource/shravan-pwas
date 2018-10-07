@@ -34,7 +34,7 @@
         <div>Describe objects</div>
       </div>
     </router-link>
-    <router-link to="/">
+    <router-link to="/magnifier">
       <div>
         <div><font-awesome-icon icon="search-plus" /></div>
         <div>Magnifier</div>

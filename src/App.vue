@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     back() {
-      $route.path !== "/" && this.$router.push("/");
+      this.$route.path !== "/" && this.$router.push("/");
     }
   }
 }
