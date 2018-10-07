@@ -40,11 +40,20 @@ export default {
 					.then(stream => {
 						const track = stream.getVideoTracks()[0];
 						track.applyConstraints({
-							aspectRatio: 1
+							facingMode: { exact: "environment" }
 						}).then(() => {
 							this.$refs.video.srcObject = stream;
-						}).catch(e => console.log(e));
-						// this.$refs.video.srcObject = stream;
+						}).catch(e => {
+							if (e.name === "OverconstrainedError") {
+								const track = stream.getVideoTracks()[0];
+								track.applyConstraints({
+									facingMode: undefined
+								});
+								this.$refs.video.srcObject = stream;
+							} else {
+								console.log(e);
+							}
+						});
 					})
 					.catch(e => console.log(e));
 			}
