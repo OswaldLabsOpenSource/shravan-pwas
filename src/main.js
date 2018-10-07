@@ -10,6 +10,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(faLocationArrow, faMap, faEnvelopeOpenText, faCubes, faSearchPlus, faChevronLeft)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
+import Vue2TouchEvents from 'vue2-touch-events'
+Vue.use(Vue2TouchEvents)
+
 Vue.config.productionTip = false
 
 new Vue({

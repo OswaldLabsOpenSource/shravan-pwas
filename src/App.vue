@@ -6,7 +6,7 @@
         <span>Back</span>
       </router-link>
     </header>
-    <div :class="$route.path !== '/' ? 'view' : ''">
+    <div :class="$route.path !== '/' ? 'view' : ''" v-touch:swipe.left="back">
       <router-view />
     </div>
   </div>
@@ -15,7 +15,12 @@
 <script>
 export default {
   mounted() {
-    console.log(this.$route.path);
+    
+  },
+  methods: {
+    back() {
+      this.$router.push("/");
+    }
   }
 }
 </script>
