@@ -26,7 +26,7 @@ export default {
 			navigator.mediaDevices.enumerateDevices()
 				.then(devices => {
 					const list = [];
-					devices.forEach(device => device.kind === "videoinput" && list.push(device.groupId));
+					devices.forEach(device => device.kind === "videoinput" && list.push(device.deviceId));
 					this.devices = list;
 					this.camera = list.length > 0 ? list[0] : "";
 				})
@@ -40,7 +40,7 @@ export default {
 					.then(stream => {
 						const track = stream.getVideoTracks()[0];
 						track.applyConstraints({
-							groupId: this.camera
+							video: {deviceId: this.camera ? {exact: this.camera} : undefined}
 						}).then(() => {
 							this.$refs.video.srcObject = stream;
 						}).catch(e => {
