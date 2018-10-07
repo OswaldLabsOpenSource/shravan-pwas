@@ -5,9 +5,9 @@ import store from './store'
 import './registerServiceWorker'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faLocationArrow, faMap, faEnvelopeOpenText, faCubes, faSearchPlus } from '@fortawesome/free-solid-svg-icons'
+import { faLocationArrow, faMap, faEnvelopeOpenText, faCubes, faSearchPlus, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faLocationArrow, faMap, faEnvelopeOpenText, faCubes, faSearchPlus)
+library.add(faLocationArrow, faMap, faEnvelopeOpenText, faCubes, faSearchPlus, faChevronLeft)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false

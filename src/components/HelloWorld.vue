@@ -10,36 +10,36 @@
         </div>
       </div>
     </div>
-    <button>
+    <router-link to="/location">
       <div>
         <div><font-awesome-icon icon="location-arrow" /></div>
         <div>My location</div>
       </div>
-    </button>
-    <button>
+    </router-link>
+    <router-link to="/">
       <div>
         <div><font-awesome-icon icon="map" /></div>
         <div>Places nearby</div>
       </div>
-    </button>
-    <button>
+    </router-link>
+    <router-link to="/">
       <div>
         <div><font-awesome-icon icon="envelope-open-text" /></div>
         <div>Read text</div>
       </div>
-    </button>
-    <button>
+    </router-link>
+    <router-link to="/">
       <div>
         <div><font-awesome-icon icon="cubes" /></div>
         <div>Describe objects</div>
       </div>
-    </button>
-    <button>
+    </router-link>
+    <router-link to="/">
       <div>
         <div><font-awesome-icon icon="search-plus" /></div>
         <div>Magnifier</div>
       </div>
-    </button>
+    </router-link>
   </main>
 </template>
 
@@ -94,6 +94,8 @@ main {
     border: none;
     padding: 0;
     margin: 0;
+    text-decoration: none;
+    display: inline-block;
     font: inherit;
     font-size: 4vh;
     display: flex;
