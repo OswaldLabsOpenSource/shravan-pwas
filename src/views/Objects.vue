@@ -25,7 +25,7 @@ export default {
 			width: window.innerWidth,
 			height: 0.9 * window.innerHeight,
 			camera: "environment",
-			caption: "Image may contain Person, People, Human, Face, etc."
+			caption: ""
 		}
 	},
 	methods: {
