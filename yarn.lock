@@ -6513,6 +6513,10 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.1.tgz#b2d3d95402a811602380783ea4f566eb875569a2"
 
+vue-html5-camera@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/vue-html5-camera/-/vue-html5-camera-0.4.0.tgz#90aea6ca5f34d32461ade1793e07662f0eb5b0ba"
+
 vue-loader@^15.4.2:
   version "15.4.2"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.4.2.tgz#812bb26e447dd3b84c485eb634190d914ce125e2"

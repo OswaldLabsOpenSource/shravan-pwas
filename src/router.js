@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Location from './views/Location.vue'
+import Magnifier from './views/Magnifier.vue'
 
 Vue.use(Router)
 
@@ -16,12 +18,12 @@ export default new Router({
     {
       path: '/location',
       name: 'Location',
-      component: () => import(/* webpackChunkName: "location" */ './views/Location.vue')
+      component: Location
     },
     {
       path: '/magnifier',
       name: 'Magnifier',
-      component: () => import(/* webpackChunkName: "Magnifier" */ './views/Magnifier.vue')
+      component: Magnifier
     }
   ]
 })
