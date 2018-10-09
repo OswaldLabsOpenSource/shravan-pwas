@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "deploy": "yarn build && cd dist && mv index.html 200.html && surge --domain visib11y.surge.sh && cd ../"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
