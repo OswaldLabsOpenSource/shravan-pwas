@@ -5,9 +5,9 @@ import store from './store'
 import './registerServiceWorker'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faLocationArrow, faMap, faEnvelopeOpenText, faCubes, faSearchPlus, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faLocationArrow, faMap, faEnvelopeOpenText, faCubes, faSearchPlus, faChevronLeft, faCamera, faSyncAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faLocationArrow, faMap, faEnvelopeOpenText, faCubes, faSearchPlus, faChevronLeft)
+library.add(faLocationArrow, faMap, faEnvelopeOpenText, faCubes, faSearchPlus, faChevronLeft, faCamera, faSyncAlt)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 import Vue2TouchEvents from 'vue2-touch-events'

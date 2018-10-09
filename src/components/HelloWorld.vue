@@ -28,7 +28,7 @@
         <div>Read text</div>
       </div>
     </router-link>
-    <router-link to="/">
+    <router-link to="/objects">
       <div>
         <div><font-awesome-icon icon="cubes" /></div>
         <div>Describe objects</div>
@@ -68,9 +68,19 @@ export default {
     },
     updateWeather() {
       if (navigator.geolocation) {
+        if (localStorage.weather) {
+          const weather = JSON.parse(localStorage.weather);
+          if (weather.when > new Date().getTime() - 1000 * 60 * 10) {
+            return this.weather = weather.info;
+          }
+        }
         navigator.geolocation.getCurrentPosition(position => {
           fetch(`https://platform.oswaldlabs.com/v1/weather/52.2090558/6.8687985`).then(response => response.json()).then(json => {
             this.weather = json.weather[0].main;
+            localStorage.setItem("weather", JSON.stringify({
+              when: new Date().getTime(),
+              info: json.weather[0].main
+            }));
           }).catch(e => {});
         });
       }

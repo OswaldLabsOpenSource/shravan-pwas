@@ -3,8 +3,8 @@
 		<Camera class="cam" :facingMode="camera" :height="height" :width="width" />
 		<footer>
 			<button @click.prevent="changeCamera">
-				<font-awesome-icon icon="fa-sync-alt" />
-				Camera
+				<font-awesome-icon icon="camera" />
+				Click
 			</button>
 		</footer>
 	</main>
@@ -43,9 +43,6 @@ main {
 	left: 0; right: 0;
 	bottom: 0;
 	overflow: hidden;
-	.cam {
-		transform: scale(3);
-	}
 	footer {
 		position: fixed;
 		z-index: 1;
