@@ -3,7 +3,7 @@
 		<Camera class="cam" :facingMode="camera" :height="height" :width="width" />
 		<footer>
 			<button @click.prevent="changeCamera">
-				<font-awesome-icon icon="fa-sync-alt" />
+				<font-awesome-icon icon="sync-alt" />
 				Camera
 			</button>
 		</footer>
