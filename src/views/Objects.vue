@@ -104,7 +104,7 @@ main {
 		font-size: 4vh;
 		left: 5vw;
 		right: 5vw;
-		top: 12.5vh;
+		top: calc(10vh + 5vw);
 		z-index: 3;
 	}
 }

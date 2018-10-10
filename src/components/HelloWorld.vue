@@ -75,13 +75,16 @@ export default {
           }
         }
         navigator.geolocation.getCurrentPosition(position => {
-          fetch(`https://platform.oswaldlabs.com/v1/weather/52.2090558/6.8687985`).then(response => response.json()).then(json => {
-            this.weather = json.weather[0].main;
-            localStorage.setItem("weather", JSON.stringify({
-              when: new Date().getTime(),
-              info: json.weather[0].main
-            }));
-          }).catch(e => {});
+          fetch(`https://platform.oswaldlabs.com/v1/weather/${position.coords.latitude}/${position.coords.longitude}`)
+            .then(response => response.json())
+            .then(json => {
+              this.weather = json.weather[0].main;
+              localStorage.setItem("weather", JSON.stringify({
+                when: new Date().getTime(),
+                info: json.weather[0].main
+              }));
+            })
+            .catch(e => {});
         });
       }
     }
