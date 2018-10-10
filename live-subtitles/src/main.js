@@ -13,6 +13,9 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 import Vue2TouchEvents from 'vue2-touch-events'
 Vue.use(Vue2TouchEvents)
 
+import VueSpeech from 'vue-speech'
+Vue.use(VueSpeech)
+
 Vue.config.productionTip = false
 
 new Vue({

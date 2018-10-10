@@ -2,10 +2,11 @@
 	<main>
 		<Camera class="cam" :facingMode="camera" :height="height" :width="width" />
 		<footer>
-			<button @click.prevent="changeCamera">
+			<vue-speech />
+			<!-- <button @click.prevent="changeCamera">
 				<font-awesome-icon icon="sync-alt" />
 				Camera
-			</button>
+			</button> -->
 		</footer>
 	</main>
 </template>
@@ -48,7 +49,8 @@ main {
 		z-index: 1;
 		bottom: 0;
 		left: 0; right: 0;
-		background-color: #270680;
+		text-shadow: 0 0 25px rgba(0, 0, 0, 0.75);
+		padding: 5vw;
 		button {
 			font: inherit;
 			border: 0;
