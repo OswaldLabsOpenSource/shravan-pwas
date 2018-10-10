@@ -43,9 +43,6 @@ main {
 	left: 0; right: 0;
 	bottom: 0;
 	overflow: hidden;
-	.cam {
-		// transform: scale(3);
-	}
 	footer {
 		position: fixed;
 		z-index: 1;
