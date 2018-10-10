@@ -1,11 +1,11 @@
 {
-  "name": "live-subtitles",
+  "name": "wikibility",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "deploy": "yarn build && cd dist && mv index.html 200.html && surge --domain livesubtitles.surge.sh && cd ../"
+    "deploy": "yarn build && cd dist && mv index.html 200.html && surge --domain wikibility.surge.sh && cd ../"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
