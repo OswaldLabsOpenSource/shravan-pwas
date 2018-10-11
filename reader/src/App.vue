@@ -108,4 +108,16 @@ p {
     margin-bottom: 2rem;
   }
 }
+
+	.article-mode {
+    padding: 5vw;
+    a {
+      color: inherit;
+      font-weight: bold;
+    }
+		img {
+			width: calc(100% + 10vw);
+			margin: 0 -5vw;
+		}
+	}
 </style>
