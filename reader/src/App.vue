@@ -27,6 +27,50 @@ export default {
 
 
 <style lang="scss">
+@font-face {
+  font-family: dyslexic;
+  font-weight: regular;
+  src: url("https://static.oswaldlabs.com/opendyslexic3-regular-webfont.woff") format("woff"), url("https://static.oswaldlabs.com/opendyslexic3-regular-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: dyslexic;
+  font-weight: bold;
+  src: url("https://static.oswaldlabs.com/opendyslexic3-bold-webfont.woff") format("woff"), url("https://static.oswaldlabs.com/opendyslexic3-bold-webfont.woff2") format("woff2");
+}
+html {
+  &.dark {
+    body {
+      background-color: #000 !important;
+    }
+    main ul li:nth-of-type(2n) {
+      background-color: #222 !important;
+    }
+  }
+  &.dyslexia {
+    * {
+      font-family: dyslexic,sans-serif;
+    }
+    body {
+      background-color: yellow !important;
+      color: black !important;
+    }
+    .title {
+      font-weight: bold !important;
+    }
+    main ul li:nth-of-type(2n) {
+      background-color: #fbfbc4 !important;
+    }
+    .source {
+      color: rgba(0, 0, 0, 0.5) !important;
+      .name {
+        color: #000 !important;
+      }
+    }
+    header {
+      background-color: #fbfbc4;
+    }
+  }
+}
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   margin: 0;

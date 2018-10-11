@@ -13,6 +13,9 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 import Vue2TouchEvents from 'vue2-touch-events'
 Vue.use(Vue2TouchEvents)
 
+import VueTimeago from 'vue-timeago'
+Vue.use(VueTimeago)
+
 Vue.config.productionTip = false
 
 new Vue({
