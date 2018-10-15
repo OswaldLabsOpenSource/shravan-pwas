@@ -1,16 +1,26 @@
-# visib11y
+# Shravan PWAs
 
-## Project setup
+This repo contains Progressive Web Apps (PWAs) for 4 different apps built for people with disabiltiies.
+
+1. Visib11y: https://visib11y.surge.sh
+2. Live Subtitles: https://livesubtitles.surge.sh
+3. Reader: https://shravanreader.surge.sh
+4. Wikibility: https://wikibility.surge.sh
+
+## Development
+
+Each folder contains a project, you can `cd` into the folder you like and get started:
+
 ```
-yarn install
+yarn
 ```
 
-### Compiles and hot-reloads for development
+### Compile and hot-reload
 ```
-yarn run serve
+yarn serve
 ```
 
-### Compiles and minifies for production
+### Production
 ```
-yarn run build
+yarn build
 ```
