@@ -1,12 +1,8 @@
 <template>
 	<main>
 		<Camera class="cam" :facingMode="camera" :height="height" :width="width" />
-		<footer>
+		<footer ref="footer">
 			<vue-speech />
-			<!-- <button @click.prevent="changeCamera">
-				<font-awesome-icon icon="sync-alt" />
-				Camera
-			</button> -->
 		</footer>
 	</main>
 </template>
@@ -23,6 +19,11 @@ export default {
 	},
 	mounted() {
 		this.resize();
+		setInterval(() => {
+			try {
+				this.$refs.footer.scrollTo(0, this.$refs.footer.scrollHeight);
+			} catch (e) {}
+		}, 1000);
 	},
 	methods: {
 		resize() {
@@ -45,12 +46,18 @@ main {
 	bottom: 0;
 	overflow: hidden;
 	footer {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
 		position: fixed;
+		mask-image: linear-gradient(transparent 50%, white);
 		z-index: 1;
+		overflow: auto;
 		bottom: 0;
 		left: 0; right: 0;
 		text-shadow: 0 0 25px rgba(0, 0, 0, 0.75);
 		padding: 5vw;
+		top: 0;
 		button {
 			font: inherit;
 			border: 0;
