@@ -60,6 +60,9 @@ export default {
       }
       this.$router.push(this.pages[this.currentPage].path);
       speak(this.pages[this.currentPage].title);
+      try {
+        navigator.vibrate(300);
+      } catch (e) {}
     }
   }
 }

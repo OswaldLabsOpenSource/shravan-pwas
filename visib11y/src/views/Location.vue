@@ -31,6 +31,6 @@ export default {
 <style lang="scss" scoped>
 main {
 	padding: 5vw;
-	font-size: 3vh;
+	font-size: 5vh;
 }
 </style>

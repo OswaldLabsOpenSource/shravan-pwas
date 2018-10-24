@@ -97,7 +97,7 @@ main {
     text-decoration: none;
     display: inline-block;
     font: inherit;
-    font-size: 4vh;
+    font-size: 4.5vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -127,7 +127,7 @@ main {
   }
   .two-cols {
     width: 100%;
-    font-size: 3vh;
+    font-size: 4vh;
     display: flex;
     > * {
       display: flex;

@@ -7,7 +7,7 @@
 				<font-awesome-icon icon="sync-alt" spin />
 				Loading...
 			</button>
-			<button v-else @click.prevent="findObjects">
+			<button v-else @click.prevent="apiCall">
 				<font-awesome-icon icon="camera" />
 				Click
 			</button>
@@ -29,7 +29,7 @@ export default {
 		}
 	},
 	methods: {
-		findObjects() {
+		apiCall() {
 			this.caption = "";
 			this.loading = true;
 			const image = this.$refs.camera.click();
@@ -53,13 +53,25 @@ export default {
 						string += "etc.";
 						speak(string);
 						this.caption = string;
-						setTimeout(() => {
-							this.caption = "";
-						}, 7500);
 					}
 				})
-				.catch(error => alert(error))
-				.then(() => this.loading = false);
+				.catch(error => {
+					if (error.error) {
+						this.caption = error.error;
+					} else {
+						try {
+							this.caption = String(error);
+						} catch (error) {
+							this.caption = "An error occurred, sorry!";
+						}
+					}
+				})
+				.then(() => this.loading = false)
+				.then(() => {
+					setTimeout(() => {
+						this.caption = "";
+					}, 7500);
+				});
 		}
 	},
 	components: {
@@ -99,7 +111,7 @@ main {
 	}
 	.caption {
 		position: fixed;
-		background-color: #332295;
+		background-color: #fc3c53;
 		padding: 5vw;
 		font-size: 4vh;
 		left: 5vw;
