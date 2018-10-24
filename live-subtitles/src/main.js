@@ -16,6 +16,11 @@ Vue.use(Vue2TouchEvents)
 import VueSpeech from 'vue-speech'
 Vue.use(VueSpeech)
 
+import VueAnalytics from 'vue-analytics'
+Vue.use(VueAnalytics, {
+  id: 'UA-79176349-11'
+})
+
 Vue.config.productionTip = false
 
 new Vue({

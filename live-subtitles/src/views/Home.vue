@@ -18,11 +18,23 @@ export default {
 		}
 	},
 	mounted() {
+		this.$ga.page("/");
 		this.resize();
 		setInterval(() => {
 			try {
 				this.$refs.footer.scrollTo(0, this.$refs.footer.scrollHeight);
 			} catch (e) {}
+			try {
+				let value = document.querySelector("p:last-child").innerText;
+				if (value) {
+					this.$ga.event({
+						eventCategory: 'subtitles',
+						eventAction: 'sentence',
+						eventLabel: 'transcription',
+						eventValue: value
+					});
+				}
+			} catch (e) { }
 		}, 1000);
 	},
 	methods: {

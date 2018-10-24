@@ -13,6 +13,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.1",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.17",
+    "vue-analytics": "^5.16.0",
     "vue-html5-camera": "^0.4.0",
     "vue-router": "^3.0.1",
     "vue-speech": "^0.1.0",
