@@ -16,18 +16,6 @@
         <div>My location</div>
       </div>
     </router-link>
-    <router-link to="/">
-      <div>
-        <div><font-awesome-icon icon="map" /></div>
-        <div>Places nearby</div>
-      </div>
-    </router-link>
-    <router-link to="/">
-      <div>
-        <div><font-awesome-icon icon="envelope-open-text" /></div>
-        <div>Read text</div>
-      </div>
-    </router-link>
     <router-link to="/objects">
       <div>
         <div><font-awesome-icon icon="cubes" /></div>

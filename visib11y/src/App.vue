@@ -6,20 +6,60 @@
         <span>Back</span>
       </router-link>
     </header>
-    <div :class="$route.path !== '/' ? 'view' : ''" v-touch:swipe.right="back">
+    <div :class="$route.path !== '/' ? 'view' : ''" v-touch:swipe="back">
       <router-view />
     </div>
   </div>
 </template>
 
 <script>
+import speak from "./speak";
 export default {
+  data() {
+    return {
+      currentPage: 0,
+      pages: [
+        {
+          title: "Home",
+          path: "/"
+        },
+        {
+          title: "My location",
+          path: "/location"
+        },
+        {
+          title: "Describe objects",
+          path: "/objects"
+        },
+        {
+          title: "Magnifier",
+          path: "/magnifier"
+        }
+      ]
+    }
+  },
   mounted() {
-    
+      for (let i = 0; i < this.pages.length; i++) {
+        if (this.pages[i].path === this.$route.path) this.currentPage = i;
+      }
   },
   methods: {
-    back() {
-      this.$route.path !== "/" && this.$router.push("/");
+    back(action) {
+      if (action === "right") {
+        if (this.currentPage === 0) {
+          this.currentPage = this.pages.length - 1;
+        } else {
+          this.currentPage -= 1;
+        }
+      } else {
+        if (this.currentPage === this.pages.length - 1) {
+          this.currentPage = 0;
+        } else {
+          this.currentPage += 1;
+        }
+      }
+      this.$router.push(this.pages[this.currentPage].path);
+      speak(this.pages[this.currentPage].title);
     }
   }
 }
