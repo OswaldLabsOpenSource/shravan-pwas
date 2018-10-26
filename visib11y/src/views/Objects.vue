@@ -33,7 +33,7 @@ export default {
 			this.caption = "";
 			this.loading = true;
 			const image = this.$refs.camera.click();
-			fetch("https://platform.oswaldlabs.com/v1/objects", {
+			fetch("https://platform.oswaldlabs.com/v1/describe", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json"
@@ -44,16 +44,8 @@ export default {
 			})
 				.then(response => response.json())
 				.then(json => {
-					const labels = json.labels;
-					if (labels.length && labels.length >= 4) {
-						let string = "Image may contain ";
-						for (let i = 0; i < 4; i++) {
-							string += labels[i].Name + ", ";
-						}
-						string += "etc.";
-						speak(string);
-						this.caption = string;
-					}
+					this.caption = json.description.captions[0].text;
+					speak(this.caption);
 				})
 				.catch(error => {
 					if (error.error) {
